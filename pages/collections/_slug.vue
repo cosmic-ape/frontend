@@ -103,15 +103,12 @@ export default {
       setTimeout(() => this.$nuxt.$loading.finish(), 500);
     });
     */
-    console.log("EL", slug);
   },
   computed: {
     collection() {
-      let collection = this.$store.state.collections.filter(el => {
-        console.log("SLUG", el.slug);
-        el.slug === this.slug;
-      });
-      console.log("ERRRRORRRR", collection[0]);
+      let collection = this.$store.state.collections.filter(
+        el => el.slug === this.slug
+      );
       return collection[0];
     }
   },
