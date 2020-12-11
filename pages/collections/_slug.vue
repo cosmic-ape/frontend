@@ -109,6 +109,10 @@ export default {
       let collection = this.$store.state.collections.filter(
         el => el.slug === this.slug
       );
+      if (collection[0] == undefined) {
+        this.$router.push("/error");
+        return;
+      }
       return collection[0];
     }
   },
