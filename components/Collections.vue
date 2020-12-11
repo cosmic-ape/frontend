@@ -8,7 +8,7 @@
           :key="collection.id"
         >
           <nuxt-link
-            :to="collection.slug"
+            :to="'collections/' + collection.slug"
             class="collections__container--item__overlay"
             :id="'collection-' + collection.id"
           >

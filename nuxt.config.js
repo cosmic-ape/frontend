@@ -50,11 +50,6 @@ export default {
    */
   loading: '~/components/loading.vue',
   plugins: [
-    {
-      src: "~/plugins/locomotive.js",
-      mode: "client",
-      ssr: false
-    },
     "~/plugins/contentful",
     "~/plugins/collections"
   ],
@@ -97,8 +92,9 @@ export default {
           content_type: "collections"
         })
       ]).then(([collections]) => {
-        return [...collections.items.map(entry => entry.fields.slug)];
+        return [...collections.items.map(entry =>  '/collections/' + entry.fields.slug)];
       });
-    }
+    },
+    fallback: '404.html' 
   }
 };
